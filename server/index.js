@@ -8,6 +8,9 @@ const PORT = 3000;
 //database connection
 dataStore();
 
+//middleware so that server can understand json format data
+app.use(express.json())
+
 app.get("/", (req, res) => {
   res.send("hello im backend");
 });
