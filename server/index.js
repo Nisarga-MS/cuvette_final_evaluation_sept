@@ -1,8 +1,12 @@
 const express = require("express");
+const dataStore = require("./config/dataStore");
 
 const app = express();
 
 const PORT = 3000;
+
+//database connection
+dataStore();
 
 app.get("/", (req, res) => {
   res.send("hello im backend");
