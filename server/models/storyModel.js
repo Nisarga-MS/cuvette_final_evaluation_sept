@@ -47,5 +47,5 @@ const storySchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Story = mongoose.Model("Story", storySchema);
+const Story = mongoose.model("Story", storySchema);
 module.exports = Story;

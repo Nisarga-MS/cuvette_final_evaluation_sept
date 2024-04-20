@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const {testAPI,register,login,findUser,logout} = require("../controllers/user.js");
-const verifyToken = require("../middlewares/verifyUser.js");
+const {verifyToken} = require("../middlewares/verifyUser.js");
 
 //user routes
 router.get('/test',testAPI);
