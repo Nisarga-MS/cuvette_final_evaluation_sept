@@ -62,15 +62,14 @@ const getStories = async (req, res, next) => {
 
   try {
     let stories = [];
-
     //geting logged-in user created story ?????///corret it afterwards
     if (userId) {
-      stories = await Story.find({ addedBy: userId })
-        .sort({ createdAt: -1 })
-        .skip(skip)
-        .limit(limit);
+      stories = await Story.find({addedBy:userId})
+      .sort({createdAt:-1})
+      .skip(skip)
+      .limit(limit);
     }
-
+    
     //getting all stories
     else if (category && category.toLowerCase() === "all") {
       //stories are grouped based on category filteration using object
@@ -102,6 +101,7 @@ const getStories = async (req, res, next) => {
         .limit(limit);
       return res.status(200).json({ success: true, stories, page });
     }
+
     res.status(200).json({ success: true, stories, page });
   } catch (error) {
     next(new Error("Failed to fetch stories"));

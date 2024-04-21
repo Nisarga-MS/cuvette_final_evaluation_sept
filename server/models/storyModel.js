@@ -29,7 +29,7 @@ const storySchema = new mongoose.Schema(
         username: String,
       },
     ],
-    boookmarks: [
+    bookmarks: [
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
