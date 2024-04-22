@@ -36,7 +36,7 @@ const register = async (req, res, next) => {
     });
     res
       .status(201)
-      .cookie("access_token", token, {
+      .cookie("token", token, {
         httponly: true,
         strict: true,
         secure: true,
@@ -75,7 +75,7 @@ const login = async (req, res, next) => {
       });
       res
         .status(200)
-        .cookie("access_token", token, {
+        .cookie("token", token, {
           httponly: true,
           secure: true,
         })
@@ -110,14 +110,16 @@ const findUser = async (req, res, next) => {
 };
 
 // logout user
-const logout = async(req,res,next)=>{
-    try {
-        res.clearCookie("access_token");
-        res.status(200).json({success:true,message:"User successfully logged out"});
-    } catch (error) {
-        next(new Error("User logout failed"));
-    }
-}
+const logout = async (req, res, next) => {
+  try {
+    res.clearCookie("token");
+    res
+      .status(200)
+      .json({ success: true, message: "User successfully logged out" });
+  } catch (error) {
+    next(new Error("User logout failed"));
+  }
+};
 module.exports = {
   testAPI,
   register,

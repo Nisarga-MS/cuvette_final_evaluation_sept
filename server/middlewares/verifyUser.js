@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
 const verifyToken = (req, res, next) => {
-  const token = req.cookies.access_token;
+  const token = req.cookies.token;
   if (!token) {
     return res.status(401).json({ success: false, message: "Unauthorized" });
   }
@@ -16,4 +16,4 @@ const verifyToken = (req, res, next) => {
     next();
   });
 };
-module.exports = {verifyToken};
+module.exports = { verifyToken };

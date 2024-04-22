@@ -21,7 +21,7 @@ router.post("/login", login);
 router.post("/logout", logout);
 
 //bookmark route
-router.post("/bookmark/:id", verifyToken, bookmarkedStories);
+router.put("/bookmark/:id", verifyToken, bookmarkedStories);
 router.get("/bookmarks/:userId", verifyToken, getAllBookmarks);
 
 module.exports = router;

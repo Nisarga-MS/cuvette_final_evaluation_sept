@@ -13,7 +13,8 @@ const storyRoute = require("./routes/storyRoute.js");
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
+const FRONTEND = process.env.FRONTEND;
 
 //database connection
 dataStore();
@@ -33,7 +34,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //cors settings
 const corsOptions = {
   credentials: true,
-  origin: "*",
+  origin: FRONTEND,
 };
 app.use(cors(corsOptions));
 
