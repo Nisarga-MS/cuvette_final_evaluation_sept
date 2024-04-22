@@ -1,0 +1,29 @@
+.pnf_container {
+  width: 100%;
+  height: 60vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.pnf_heading {
+  margin-top: 0rem;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #ff7373;
+}
+.pnf_img {
+  width: 400px;
+}
+
+@media screen and (max-width: 768px) {
+  .pnf_img {
+    width: 200px;
+  }
+  .pnf_heading {
+    font-size: 1.3rem;
+    margin-bottom: 0rem;
+  }
+}
