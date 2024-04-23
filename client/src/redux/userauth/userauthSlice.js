@@ -12,23 +12,6 @@ const userauthSlice = createSlice({
   name: "login",
   initialState,
   reducers: {
-    findUserRequest: (state) => {
-      state.loading = true;
-    },
-    findUserSuccess: (state, action) => {
-      state.loading = false;
-      state.isAuthenticated = true;
-      state.username = action.payload.username;
-      state.token = action.payload.token;
-      state.userId = action.payload.user._id;
-      state.user = action.payload.user;
-    },
-    findUserFailure: (state) => {
-      state.loading = false;
-      state.isAuthenticated = false;
-      state.username = null;
-      state.token = null;
-    },
     registerRequest: (state) => {
       state.loading = true;
     },
@@ -65,6 +48,23 @@ const userauthSlice = createSlice({
       state.token = null;
       state.userId = null;
     },
+    findUserRequest: (state) => {
+      state.loading = true;
+    },
+    findUserSuccess: (state, action) => {
+      state.loading = false;
+      state.isAuthenticated = true;
+      state.username = action.payload.username;
+      state.token = action.payload.token;
+      state.userId = action.payload.user._id;
+      state.user = action.payload.user;
+    },
+    findUserFailure: (state) => {
+      state.loading = false;
+      state.isAuthenticated = false;
+      state.username = null;
+      state.token = null;
+    },
     logoutRequest: (state) => {
       state.loading = true;
     },
@@ -82,15 +82,15 @@ const userauthSlice = createSlice({
 });
 
 export const {
-  findUserRequest,
-  findUserSuccess,
-  findUserFailure,
-  loginRequest,
-  loginSuccess,
-  loginFailure,
   registerRequest,
   registerSuccess,
   registerFailure,
+  loginRequest,
+  loginSuccess,
+  loginFailure,
+  findUserRequest,
+  findUserSuccess,
+  findUserFailure,
   logoutRequest,
   logoutSuccess,
   logoutFailure,
