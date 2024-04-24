@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import UserBookmarks from "../components/ActiveUser/Bookmarks/Bookmarks";
 
 const BookmarkPage = () => {
-  return (
-    <div>BookmarkPage</div>
-  )
-}
+  return <UserBookmarks />;
+};
 
-export default BookmarkPage
+export default BookmarkPage;

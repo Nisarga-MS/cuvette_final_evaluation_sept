@@ -1,0 +1,33 @@
+.storiesContainer {
+  margin: 1rem;
+}
+.heading {
+  margin-top: 2rem;
+  text-align: center;
+}
+.Stories {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  justify-content: space-around;
+}
+
+.no_my_stories {
+  color: #ffff;
+  background-color: #73abff;
+  font-size: 1rem;
+  margin: 1rem;
+  padding: 0.6rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.no_story_heading {
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .heading {
+    font-size: 1.5rem;
+  }
+}

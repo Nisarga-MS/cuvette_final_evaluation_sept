@@ -16,7 +16,7 @@ const PageNotFound = () => {
       <h1 className={styles.pnf_heading}>Sorry, this page isn't avaliable</h1>
       <Button
         myFunction={() => navigate("/")}
-        text="Go Home"
+        text="Go to Home"
         color="#73ABFF"
       ></Button>
     </div>
