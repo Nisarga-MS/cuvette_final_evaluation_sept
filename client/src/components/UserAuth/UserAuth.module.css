@@ -1,0 +1,129 @@
+.uauthContainer {
+  width: 50%;
+  background-color: #ffffff;
+  padding: 2rem;
+  margin: 0 auto;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 12px; /* 5px*/
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.26);
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.uauth_heading {
+  text-align: center;
+}
+
+.uauthForm,
+.uauthForm__container {
+  width: 100%;
+}
+
+/* check thissss in both mob l:99% t:-3rem also l:101% t:-3.8rem!!!!! */
+.closeIcon {
+  position: relative;
+  left: 100%;
+  top: -3.6rem;
+  cursor: pointer;
+}
+/* .eyeIcon {
+    position: relative;
+    right: 15%;
+    top: 50%;
+    height: 1%;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+.eyeIcon:active {
+    scale: 0.9;
+  } */
+
+.uauthForm__content {
+  width: 100%;
+}
+
+.uauthForm__input {
+  width: 70%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  border: 1px solid #000000;
+  outline: none;
+}
+
+/* check !!!! */
+.input_container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.uauthForm__button_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.uauthForm__button {
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  border-radius: 3rem;
+  padding: 0.5rem 1.5rem;
+  margin: 0.5rem;
+  color: #ffffff;
+  background-color: #73abff;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.uauthForm__button:hover {
+  background-color: #4d8bff;
+}
+
+.err {
+  color: #ff0000;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .uauthContainer {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .closeIcon {
+    position: relative;
+    left: 98%;
+    top: -2.7rem;
+  }
+
+  .uauth_heading {
+    font-size: 1.2rem;
+  }
+
+  .input_container {
+    width: 100%;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .uauthForm__input {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+  }
+}
