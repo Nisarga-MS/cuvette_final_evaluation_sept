@@ -1,0 +1,113 @@
+.view_story_container {
+  width: 100%;
+  height: 100vh;
+  color: #ffff;
+  top: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.view_story_container_small {
+  width: 100%;
+  height: 100%;
+}
+
+.view_story {
+  width: 30%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.view_story__small {
+  width: 100%;
+  height: 100%;
+}
+
+.view_storyDes {
+  padding: 0.5rem;
+}
+
+.story_btns {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* check thiss  i add cursor*/
+.close_btn,
+.share_btn {
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.like {
+  margin: 1rem;
+  display: inline-flex;
+  align-items: center;
+}
+.bookmark {
+  margin: 1rem;
+}
+
+.story_btns {
+  width: 92%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 1rem 0;
+  z-index: 2;
+}
+
+.story_btns_1 {
+  width: 30%;
+  position: absolute;
+  top: 4rem;
+  background: linear-gradient(180deg, #000000, transparent);
+}
+
+.story_btns_2 {
+  width: 30%;
+  position: absolute;
+  bottom: 2rem;
+  background: linear-gradient(0deg, #000000, transparent);
+}
+
+.story_btns_1_mob {
+  width: 100%;
+  position: absolute;
+  top: 2rem;
+}
+
+.story_btns_2_mob {
+  width: 100%;
+  position: absolute;
+  bottom: 0rem;
+  background: linear-gradient(0deg, #000000, transparent);
+}
+
+@media screen and (max-width: 768px) {
+  .view_story_container,
+  .view_story {
+    width: 100%;
+    height: 100%;
+  }
+  .story_btns_1 {
+    width: 100%;
+    position: absolute;
+    top: 2rem;
+  }
+  .story_btns_2 {
+    width: 100%;
+    position: absolute;
+    bottom: 0rem;
+    background: linear-gradient(0deg, #000000, transparent);
+  }
+}

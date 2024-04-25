@@ -1,0 +1,123 @@
+.imageSlider {
+  width: 30vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Progress */
+.progress-container {
+  width: 30%;
+  position: absolute;
+  background: linear-gradient(180deg, #060606, #000000);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.progress-bar {
+  width: 15%;
+  height: 5px;
+  margin: 1rem;
+  overflow: hidden;
+  background-color: #d9d9d980;
+}
+
+.progress {
+  height: 100%;
+  background-color: #ffffff;
+  transition: width 0.1s linear;
+}
+
+.completed {
+  width: 100% !important;
+  background-color: #ffffff;
+}
+
+.buttons {
+  width: 50vw;
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.next-btn,
+.prev-btn {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background-color: transparent;
+  position: relative;
+  top: 50%;
+  font-size: 20px;
+  margin: 1rem;
+  padding: 2rem;
+  border: none;
+  cursor: pointer;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  border-radius: 50%;
+  background-color: #00000029;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.viewBtn {
+  position: relative !important;
+}
+
+/* Slider */
+.slider_btns {
+  margin: 0 1rem;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slide_text {
+  position: absolute;
+  left: 36%;
+  bottom: 8rem;
+}
+
+@media screen and (max-width: 768px) {
+  .imageSlider {
+    width: 100vw !important;
+    height: 100vh !important;
+  }
+  .buttons {
+    width: 100vw;
+    left: 0;
+  }
+  .slide_text {
+    width: 90%;
+    position: absolute;
+    bottom: 7rem;
+    left: 1rem;
+  }
+  .slide_heading {
+    font-size: 1.8rem;
+  }
+  .slide_p {
+    font-size: 0.8rem;
+  }
+  .progress-container {
+    width: 100%;
+  }
+}

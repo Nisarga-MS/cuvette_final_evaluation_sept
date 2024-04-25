@@ -1,0 +1,46 @@
+.categories {
+  margin: 1rem;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.category {
+  width: 20%;
+  height: 10rem;
+  color: #ffff;
+  text-align: center;
+  margin-top: 2rem;
+  margin-right: 1rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 1rem;
+  background-position: center;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.categorySelected {
+  border: 0.3rem solid #73abff !important;
+}
+
+@media screen and (max-width: 768px) {
+  .categories {
+    width: 95vw;
+    overflow-x: scroll;
+  }
+  .category {
+    width: 8rem;
+    height: 5rem;
+    font-size: 0.8rem;
+    padding: 0.3rem 5rem;
+  }
+  .categorySelected {
+    border: 0.3rem solid #73abff !important;
+  }
+}

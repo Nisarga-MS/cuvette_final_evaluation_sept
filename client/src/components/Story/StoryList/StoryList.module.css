@@ -1,0 +1,41 @@
+.storiesContainer {
+  margin: 1rem;
+}
+
+.storiesHeading {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.stories {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  place-items: center;
+  justify-content: flex-start;
+}
+
+.stories_mob {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.no_story {
+  color: #ffff;
+  background: #73abff;
+  font-size: 1.5rem;
+  text-align: center;
+  border-radius: 3rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .stories {
+    grid-template-columns: 1fr 1fr;
+  }
+  .stories_mob {
+    grid-template-columns: 1fr;
+  }
+  .storiesHeading {
+    font-size: 1.2rem;
+  }
+}
