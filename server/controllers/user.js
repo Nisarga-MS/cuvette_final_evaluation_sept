@@ -25,11 +25,11 @@ const register = async (req, res, next) => {
     // to encrypt the password using bcryptjs
     const hashedPassword = bcryptjs.hashSync(password, 10);
 
-    const newUser = new User({
+    const user = new User({
       username,
       password: hashedPassword,
     });
-    await newUser.save();
+    await user.save();
     //jwt token generation
     const token = jwt.sign({ username: username }, process.env.JWT_SECRET, {
       expiresIn: "1d",
@@ -45,8 +45,8 @@ const register = async (req, res, next) => {
         success: true,
         token,
         username: username,
-        userId: newUser._id,
-        newUser,
+        userId: user._id,
+        user,
       });
   } catch (error) {
     next(new Error("User registration failed"));
@@ -60,12 +60,12 @@ const login = async (req, res, next) => {
     if (!username || !password) {
       return res.status(422).json("Please ensure all fields are filled");
     }
-    const validUser = await User.findOne({ username });
-    if (!validUser) {
+    const user = await User.findOne({ username });
+    if (!user) {
       res.status(404).json("User Not Found");
     } else {
       // decrypt the password using bcryptjs
-      const validPassword = bcryptjs.compareSync(password, validUser.password);
+      const validPassword = bcryptjs.compareSync(password, user.password);
       if (!validPassword) {
         return res.status(401).json("Invalid login information");
       }
@@ -83,8 +83,8 @@ const login = async (req, res, next) => {
           success: true,
           token,
           username: username,
-          userId: validUser._id,
-          validUser,
+          userId: user._id,
+          user,
         });
     }
   } catch (error) {

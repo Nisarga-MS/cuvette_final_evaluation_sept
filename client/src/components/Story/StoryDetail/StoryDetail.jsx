@@ -133,7 +133,7 @@ const ViewStory = () => {
               />
             </svg>
             <p className={styles.totalLikes}>
-              {story && console.log(story.lokes.length)}
+              {story && console.log(story.likes.length)}
               {totalLikes + (newLike ? 1 : 0)}
             </p>
           </div>

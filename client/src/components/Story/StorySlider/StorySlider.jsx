@@ -48,6 +48,7 @@ const StorySlider = ({ slides }) => {
     });
   };
 
+
   const handleBtns = (value) => {
     setProgressBars(progress);
     progressBars[imgIndex].progress = 0;

@@ -49,7 +49,7 @@ const StoryCard = ({ story }) => {
         {isAuthenticated && userId && story.addedBy === userId && (
           <div
             className={styles.editStory}
-            onclick={handleEditStory}
+            onClick={handleEditStory}
             style={{ cursor: "pointer" }}
           >
             <svg

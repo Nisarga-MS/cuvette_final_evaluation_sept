@@ -26,7 +26,7 @@ const HeaderDesktop = () => {
   return (
     <>
       <header className={styles.header}>
-        <h2 className={styles.logoText}>SwipTroy</h2>
+        <h2 className={styles.logoText}>SwipTory</h2>
         <div className={styles.headerBtns}>
           {!isAuthenticated ? (
             <>

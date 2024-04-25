@@ -200,7 +200,7 @@ const StoryForm = () => {
         />
       </svg>
       {/* slide form */}
-      <div className={styles.SlideForm__container}>
+      <div className={styles.storySlide__container }>
         {slides.map((slide, slideIndex) => (
           <>
             {slideIndex === currentSlide && (
