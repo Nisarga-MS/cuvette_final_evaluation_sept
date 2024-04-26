@@ -39,7 +39,7 @@ const corsOptions = {
   credentials: true,
   origin:"*",
 };
-app.use(cors(corsOptions));
+app.use(cors());
 
 //routes
 app.use("/api/user", userRoute);
