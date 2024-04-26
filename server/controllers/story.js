@@ -1,5 +1,6 @@
 const Story = require("../models/storyModel");
 const User = require("../models/userModel");
+const error = require("../middlewares/error");
 
 //adding new stories
 const addStory = async (req, res, next) => {
@@ -10,12 +11,12 @@ const addStory = async (req, res, next) => {
         .status(422)
         .json("Please ensure all required fields are filled");
     }
-    const newStory = new Story({
+    const story = new Story({
       slides,
       addedBy,
     });
-    await newStory.save();
-    res.status(201).json({ success: true, newStory });
+    await story.save();
+    res.status(201).json({ success: true, story });
   } catch (error) {
     next(new Error("Failed to add story"));
   }
@@ -64,12 +65,12 @@ const getStories = async (req, res, next) => {
     let stories = [];
     //geting logged-in user created story ?????///corret it afterwards
     if (userId) {
-      stories = await Story.find({addedBy:userId})
-      .sort({createdAt:-1})
-      .skip(skip)
-      .limit(limit);
+      stories = await Story.find({ addedBy: userId })
+        .sort({ createdAt: -1 })
+        .skip(skip)
+        .limit(limit);
     }
-    
+
     //getting all stories
     else if (category && category.toLowerCase() === "all") {
       //stories are grouped based on category filteration using object
@@ -133,7 +134,6 @@ const getStoryById = async (req, res, next) => {
           bookmarked: bookmarked,
           totalLikes,
         });
-        //check this part
       }
     } else {
       return res.status(200).json({ success: true, story, totalLikes });

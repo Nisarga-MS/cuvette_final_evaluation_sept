@@ -1,6 +1,7 @@
 const User = require("../models/userModel");
 const bcryptjs = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const error = require("../middlewares/error");
 
 //  test To check the health of api
 const testAPI = async (req, res, next) => {
