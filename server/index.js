@@ -16,7 +16,7 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const FRONTEND = process.env.FRONTEND;
+// const FRONTEND = process.env.FRONTEND;
 
 //path settings variable
 const __dirname = path.resolve();
@@ -40,7 +40,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //cors settings
 const corsOptions = {
   credentials: true,
-  origin: FRONTEND,
+  origin: "*",
 };
 app.use(cors(corsOptions));
 
