@@ -4,7 +4,7 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
-const path = require("path");
+// const path = require("path");
 const error = require("./middlewares/error.js");
 
 //importing routes
@@ -25,7 +25,7 @@ dataStore();
 app.use(express.json());
 
 //middleware for path settings
-app.use(express.static(path.join(__dirname, "../client/dist")));
+// app.use(express.static(path.join(__dirname, "../client/dist")));
 
 //to get cookie we use this middleware
 app.use(cookieParser());
@@ -46,9 +46,9 @@ app.use("/api/user", userRoute);
 app.use("/api/story", storyRoute);
 
 //path
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../client/dist/index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.resolve(__dirname, "../client/dist/index.html"));
+// });
 
 //start server
 app.listen(PORT, () => {
