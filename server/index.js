@@ -37,7 +37,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //cors settings
 const corsOptions = {
   credentials: true,
-  origin:FRONTEND,
+  origin:"*",
 };
 app.use(cors(corsOptions));
 
