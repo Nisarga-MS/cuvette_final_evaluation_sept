@@ -18,8 +18,6 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 // const FRONTEND = process.env.FRONTEND;
 
-//path settings variable
-const __dirname = path.resolve();
 
 //database connection
 dataStore();
@@ -28,7 +26,7 @@ dataStore();
 app.use(express.json());
 
 //middleware for path settings
-app.use(express.static(path.join(__dirname, "/client/dist")));
+app.use(express.static(path.join(__dirname, "../client/dist")));
 
 //to get cookie we use this middleware
 app.use(cookieParser());
@@ -50,7 +48,7 @@ app.use("/api/story", storyRoute);
 
 //path
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
+  res.sendFile(path.resolve(__dirname, "../client/dist/index.html"));
 });
 
 //start server
