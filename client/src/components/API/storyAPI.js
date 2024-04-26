@@ -36,7 +36,9 @@ export const addStory = (values) => async (dispatch) => {
     dispatch(addStoryRequest());
     const { data } = await axios.post("/api/story/add", values);
     dispatch(addStorySuccess(data));
-    toast.success("Story added successfully", { position: "top-center" });
+    toast.success("Story added successfully", {
+      position: "top-center",
+    });
   } catch (error) {
     dispatch(addStoryFailure());
     toast.error(error.response.data, { position: "top-center" });
@@ -127,7 +129,9 @@ export const likeStory = (id, userId) => async (dispatch) => {
   try {
     const data = await axios.put(`/api/story/like/${id}`, { userId: userId });
     dispatch(likeSuccess(data.story));
-    toast.success("Story liked successfully", { position: "top-center" });
+    toast.success("Story liked and saved successfully", {
+      position: "top-center",
+    });
   } catch (error) {
     dispatch(likeFailure());
     toast.error(error.response.data.message, { position: "top-center" });
@@ -142,7 +146,9 @@ export const bookmarkStory = (id, userId) => async (dispatch) => {
       userId: userId,
     });
     dispatch(bookmarkSuccess(data.story));
-    toast.success("Story bookmarked successfully", { position: "top-center" });
+    toast.success("Story bookmarked and saved successfully", {
+      position: "top-center",
+    });
   } catch (error) {
     dispatch(bookmarkFailure());
     toast.error(error.response.data.message, { position: "top-center" });

@@ -15,14 +15,18 @@ const StoryForm = () => {
   const { user } = useSelector((state) => state.userauth);
   const { isSmallScreen } = useSelector((state) => state.layout);
   const { story, storyLoading } = useSelector((state) => state.story);
+
+  
   const initialSlides = story && story.slides ? story.slides : [{}, {}, {}];
 
+  
   const [slides, setSlides] = useState(initialSlides);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (!storyLoading) {
+    if (!storyLoading && story) {
+      console.log(story);
       setSlides(story.slides);
     }
   }, [storyLoading]);

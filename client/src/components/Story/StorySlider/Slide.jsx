@@ -19,7 +19,7 @@ const Slide = ({ slides, imgIndex }) => {
                 height: isSmallScreen ? "100vh" : "90vh",
               }}
               src={slide?.imageUrl}
-              alt={`slide ${index}`}
+              alt={`Slide ${index}`}
             />
             <div
               className="slide_text"

@@ -97,7 +97,8 @@ const ViewStory = () => {
             <img src={shareIcon} alt="shareIcon" />
           </div>
         </div>
-        <StorySlider slides={story && story.slides} />
+        {story && <StorySlider slides={story && story.slides} />}
+        
         <div className={`${styles.story_btns} ${styles.story_btns_2}`}>
           {/* bookmark icon */}
           <div className={styles.bookmark}>

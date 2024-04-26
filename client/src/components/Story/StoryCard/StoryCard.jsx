@@ -47,6 +47,7 @@ const StoryCard = ({ story }) => {
           </div>
         </div>
         {isAuthenticated && userId && story.addedBy === userId && (
+          // edit icon
           <div
             className={styles.editStory}
             onClick={handleEditStory}

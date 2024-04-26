@@ -93,7 +93,7 @@ const HeaderDesktop = () => {
                 </svg>
                 {menuClick && (
                   <div className={styles.hamburger_content}>
-                    <h4 style={{ marginBotton: "1rem" }}>{username}</h4>
+                    <h4 style={{ marginBottom: "1rem" }}>{username}</h4>
                     <Button text="logout" myFunction={handleLogout}></Button>
                   </div>
                 )}

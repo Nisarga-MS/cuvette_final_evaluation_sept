@@ -9,6 +9,7 @@ import arrow from "../../../assets/arrow.png";
 const StorySlider = ({ slides }) => {
   const [reload, setReload] = useState(false);
   const { isSmallScreen } = useSelector((state) => state.layout);
+
   const images = slides && slides.map((slide) => slide.imageUrl);
 
   const progress =
@@ -21,16 +22,27 @@ const StorySlider = ({ slides }) => {
   const [imgIndex, setImgIndex] = useState(0);
 
   let interval;
+
   useEffect(() => {
     interval = setInterval(() => {
       updateProgress(imgIndex);
     }, 50);
+
     return () => clearInterval(interval);
   }, [imgIndex, images]);
 
   const updateProgress = (barIndex) => {
     setProgressBars((prevProgressBars) => {
+      console.log(prevProgressBars);
+      console.log(barIndex);
+      if(!Array.isArray(prevProgressBars)){
+        return [] 
+      }
       const newProgressBars = [...prevProgressBars];
+      console.log(newProgressBars);
+      if(!newProgressBars[barIndex]){
+        return []
+      }
       newProgressBars[barIndex].progress += 0.5;
 
       if (newProgressBars[barIndex].progress >= 100) {
@@ -47,7 +59,6 @@ const StorySlider = ({ slides }) => {
       return newProgressBars;
     });
   };
-
 
   const handleBtns = (value) => {
     setProgressBars(progress);
@@ -69,12 +80,13 @@ const StorySlider = ({ slides }) => {
         setImgIndex((prevIndex) => (prevIndex - 1) % images.length);
       }
     }
+
     updateProgress(imgIndex);
   };
 
   return (
     <div className={`imageSlider`}>
-      <div className={`buttons`}>
+      <div className={`buttons `}>
         <button className="prev-btn" onClick={() => handleBtns("prev")}>
           <img
             src={arrow}
@@ -97,7 +109,9 @@ const StorySlider = ({ slides }) => {
           )}
         </button>
       </div>
+
       <Progress images={images} progressBars={progressBars} />
+
       <Slide slides={slides} imgIndex={imgIndex} />
     </div>
   );

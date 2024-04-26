@@ -121,17 +121,17 @@ const UserAuth = () => {
               onChange={handleChange}
               className={styles.uauthForm__input}
             />
-            {/* <img
+            <img
               src={EyeIcon}
               alt="eyeIcon"
               className={styles.eyeIcon}
               onClick={togglepassword}
-            /> */}
+            />
           </div>
           {error && <Error error={error} />}
           <div className={styles.uauthForm__button_container}>
             <button type="submit" className={styles.uauthForm__button}>
-              {modalContent === REGISTER ? "register" : "login"}
+              {modalContent === REGISTER ? "Register" : "Login"}
             </button>
           </div>
         </form>
