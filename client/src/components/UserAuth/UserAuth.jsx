@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import styles from "./UserAuth.module.css";
-import EyeIcon from "../../assets/eye-icon.svg";
 import { REGISTER, LOGIN } from "../../globals";
 import { useDispatch, useSelector } from "react-redux";
 import { openModal, closeModal } from "../../redux/modal/modalSlice";
@@ -120,12 +119,6 @@ const UserAuth = () => {
               name="password"
               onChange={handleChange}
               className={styles.uauthForm__input}
-            />
-            <img
-              src={EyeIcon}
-              alt="eyeIcon"
-              className={styles.eyeIcon}
-              onClick={togglepassword}
             />
           </div>
           {error && <Error error={error} />}

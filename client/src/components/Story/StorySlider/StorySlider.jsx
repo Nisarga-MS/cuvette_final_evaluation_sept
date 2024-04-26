@@ -33,13 +33,10 @@ const StorySlider = ({ slides }) => {
 
   const updateProgress = (barIndex) => {
     setProgressBars((prevProgressBars) => {
-      console.log(prevProgressBars);
-      console.log(barIndex);
       if(!Array.isArray(prevProgressBars)){
         return [] 
       }
       const newProgressBars = [...prevProgressBars];
-      console.log(newProgressBars);
       if(!newProgressBars[barIndex]){
         return []
       }

@@ -26,7 +26,6 @@ const StoryForm = () => {
 
   useEffect(() => {
     if (!storyLoading && story) {
-      console.log(story);
       setSlides(story.slides);
     }
   }, [storyLoading]);
