@@ -5,9 +5,9 @@ import { useSelector } from "react-redux";
 
 const Header = () => {
   const { isSmallScreen } = useSelector((state) => state.layout);
-  
-  useEffect(() => {
 
+  useEffect(() => {
+    
   }, [isSmallScreen]);
   return <>{isSmallScreen ? <HeaderMobile /> : <HeaderDesktop />}</>;
 };

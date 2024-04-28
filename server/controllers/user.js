@@ -19,6 +19,7 @@ const register = async (req, res, next) => {
     if (!username || !password) {
       return res.status(422).json("Please ensure all fields are filled");
     }
+    //check if user already exist
     const foundUser = await User.findOne({ username });
     if (foundUser) {
       return res.status(409).json("Duplicate user found");

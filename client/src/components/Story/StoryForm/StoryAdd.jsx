@@ -200,7 +200,7 @@ const StoryForm = () => {
         />
       </svg>
       {/* slide form */}
-      <div className={styles.storySlide__container }>
+      <div className={styles.slideForm__container}>
         {slides.map((slide, slideIndex) => (
           <>
             {slideIndex === currentSlide && (
@@ -233,7 +233,7 @@ const StoryForm = () => {
         {slides.length > 3 ? (
           <Button
             myFunction={() => handleRemoveSlide(currentSlide)}
-            color="#ff73b5"
+            color="#FF0000"
             text="Remove"
             size="small"
           ></Button>

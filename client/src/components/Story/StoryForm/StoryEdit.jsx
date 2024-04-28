@@ -16,10 +16,8 @@ const StoryForm = () => {
   const { isSmallScreen } = useSelector((state) => state.layout);
   const { story, storyLoading } = useSelector((state) => state.story);
 
-  
   const initialSlides = story && story.slides ? story.slides : [{}, {}, {}];
 
-  
   const [slides, setSlides] = useState(initialSlides);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [error, setError] = useState("");
@@ -212,7 +210,7 @@ const StoryForm = () => {
         {slides.length > 3 ? (
           <Button
             myFunction={() => handleRemoveSlide(currentSlide)}
-            color="#ff73b5"
+            color="#FF0000"
             text="Remove"
             size="small"
           ></Button>

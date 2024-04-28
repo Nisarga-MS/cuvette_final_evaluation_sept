@@ -1,6 +1,5 @@
 import React from "react";
 import "./StorySlider.css";
-// import { useSelector } from "react-redux/es/hooks/useSelector";
 import { useSelector } from "react-redux";
 
 const Slide = ({ slides, imgIndex }) => {

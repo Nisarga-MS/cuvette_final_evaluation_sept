@@ -30,17 +30,10 @@ const UserAuth = () => {
     }
   }, [dispatch, isAuthenticated, modal]);
 
- 
-
   //states
   const [values, setValues] = useState({ username: "", password: "" });
   const { username, password } = values;
   const [error, setError] = useState(null);
-  const [passwordshow, setPasswordshow] = useState(false);
-
-  const togglepassword = () => {
-    setPasswordshow(!passwordshow);
-  };
 
   const handleClose = () => {
     dispatch(closeModal());
@@ -68,8 +61,6 @@ const UserAuth = () => {
       });
     }
   };
-
-  
 
   return (
     <div
@@ -113,7 +104,7 @@ const UserAuth = () => {
           <div className={styles.input_container}>
             <label>Password</label>
             <input
-              type={passwordshow ? "text" : "password"}
+              type="password"
               placeholder="Enter password"
               value={password}
               name="password"

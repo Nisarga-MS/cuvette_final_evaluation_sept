@@ -18,7 +18,6 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 // const FRONTEND = process.env.FRONTEND;
 
-
 //database connection
 dataStore();
 
@@ -51,7 +50,7 @@ app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "../client/dist/index.html"));
 });
 
-//start server
+// run server
 app.listen(PORT, () => {
   console.log(`Server is up and running on port🚀 ${PORT} `);
 });

@@ -39,9 +39,7 @@ const Bookmarks = () => {
             <h1 className={styles.no_bookmark_heading}>
               You have no bookmarks yet!
             </h1>
-            <Button
-              text={"Go to Home"}
-              myFunction={() => navigate("/")} />
+            <Button text={"Go to Home"} myFunction={() => navigate("/")} />
           </div>
         )}
       </div>

@@ -11,6 +11,7 @@ const addStory = async (req, res, next) => {
         .status(422)
         .json("Please ensure all required fields are filled");
     }
+    //adding new story
     const story = new Story({
       slides,
       addedBy,
@@ -33,7 +34,6 @@ const editStory = async (req, res, next) => {
     if (!story) {
       res.status(404).json({ error: "Story not found" });
     }
-    //check json part
     //editing story
     story.slides = slides;
     story.addedBy = addedBy;
@@ -63,7 +63,7 @@ const getStories = async (req, res, next) => {
 
   try {
     let stories = [];
-    //geting logged-in user created story ?????///corret it afterwards
+    //geting logged-in user created story
     if (userId) {
       stories = await Story.find({ addedBy: userId })
         .sort({ createdAt: -1 })

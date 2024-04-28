@@ -6,7 +6,7 @@ const likedStories = async (req, res) => {
   const userId = req.body.userId;
   try {
     const story = await Story.findById(storyId);
-    const user =  await User.findById(userId);
+    const user = await User.findById(userId);
 
     if (!story) {
       return res.status(404).json({ message: "Story not found" });

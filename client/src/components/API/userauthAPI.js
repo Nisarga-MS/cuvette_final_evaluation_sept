@@ -29,7 +29,7 @@ export const register = (values) => async (dispatch) => {
     });
     dispatch(registerSuccess(data));
     localStorage.setItem("username", JSON.stringify(data.username));
-    toast.success("Register successful", {
+    toast.success(" User register successful", {
       position: "top-right",
       autoClose: 2000,
     });
@@ -49,7 +49,7 @@ export const login = (values) => async (dispatch) => {
     dispatch(loginSuccess(data));
     dispatch(getStoriesByUser(data.userId));
     localStorage.setItem("username", JSON.stringify(data.username));
-    toast.success("Login Successful", {
+    toast.success(" User login Successful", {
       position: "top-right",
       autoClose: 2000,
     });
@@ -78,7 +78,7 @@ export const logout = () => async (dispath) => {
     await axios.post("/api/user/logout", { withCredentials: true });
     dispath(logoutSuccess());
     localStorage.removeItem("username");
-    toast.success("Logout Successful", {
+    toast.success("User logout successfull", {
       position: "top-right",
       autoClose: 1000,
     });

@@ -60,7 +60,7 @@ const Stories = ({ category }) => {
   const renderStories = (storyArray, isLoading, pageFunction) => (
     <>
       <div
-        className={`${styles.stories}${
+        className={`${styles.stories} ${
           isSmallScreen ? styles.stories_mob : ""
         }`}
       >

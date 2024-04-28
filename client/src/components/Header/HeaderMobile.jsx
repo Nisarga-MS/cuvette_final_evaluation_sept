@@ -24,6 +24,7 @@ const HeaderMobile = () => {
   const handleMenuClick = () => {
     setMenuClick(!menuClick);
   };
+
   return (
     <header className={styles.header}>
       <h2 className={styles.logoText}>SwipTory</h2>

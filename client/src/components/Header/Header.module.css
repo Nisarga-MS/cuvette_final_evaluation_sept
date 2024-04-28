@@ -81,14 +81,14 @@
 
 .user_div {
   width: 100%;
-  display: inline-flex;
   padding: 0.5rem 1rem;
+  display: inline-flex;
   align-items: center;
 }
 .close {
   position: absolute;
   top: 5.5rem;
-  right: 0.8rem; /*0.5 */
+  right: 0.8rem;
   cursor: pointer;
   z-index: 6;
 }

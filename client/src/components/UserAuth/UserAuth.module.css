@@ -9,7 +9,7 @@
   align-items: center;
   justify-content: center;
   border: 1px solid #ccc;
-  border-radius: 12px; /* 5px*/
+  border-radius: 12px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.26);
   transform: translate(-50%, -50%);
   position: absolute;
@@ -26,24 +26,12 @@
   width: 100%;
 }
 
-/* check thissss in both mob l:99% t:-3rem also l:101% t:-3.8rem!!!!! */
 .closeIcon {
   position: relative;
   left: 100%;
   top: -3.6rem;
   cursor: pointer;
 }
-/* .eyeIcon {
-    position: relative;
-    right: 15%;
-    top: 50%;
-    height: 1%;
-    cursor: pointer;
-    transition: 0.2s;
-  }
-.eyeIcon:active {
-    scale: 0.9;
-  } */
 
 .uauthForm__content {
   width: 100%;
@@ -58,7 +46,6 @@
   outline: none;
 }
 
-/* check !!!! */
 .input_container {
   width: 100%;
   display: flex;
